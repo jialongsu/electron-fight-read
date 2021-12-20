@@ -1,0 +1,155 @@
+{
+  "name": "fight-read",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config ./webpack/webpack.prod.js",
+    "dll": "webpack --config ./webpack/webpack.dll.js",
+    "start": "webpack server --config ./webpack/webpack.dev.js",
+    "electron-start": "electron .",
+    "electron-build": "electron-forge import",
+    "package": "electron-forge package",
+    "make": "electron-forge make --model=production"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@ant-design/icons": "^4.7.0",
+    "@reduxjs/toolkit": "^1.7.0",
+    "antd": "^4.17.3",
+    "electron-squirrel-startup": "^1.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-redux": "^7.2.6",
+    "react-router-dom": "6",
+    "styled-components": "^5.3.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/eslint-parser": "^7.16.3",
+    "@babel/plugin-transform-runtime": "^7.16.0",
+    "@babel/preset-env": "^7.16.0",
+    "@babel/preset-react": "^7.16.0",
+    "@babel/preset-typescript": "^7.16.0",
+    "@babel/runtime": "^7.16.3",
+    "@electron-forge/cli": "^6.0.0-beta.61",
+    "@electron-forge/maker-deb": "^6.0.0-beta.61",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.61",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.61",
+    "@electron-forge/maker-zip": "^6.0.0-beta.61",
+    "@fullhuman/postcss-purgecss": "^4.0.3",
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.5.1",
+    "@types/react": "^17.0.34",
+    "@types/react-dom": "^17.0.11",
+    "@types/styled-components": "^5.1.18",
+    "@typescript-eslint/eslint-plugin": "^5.3.1",
+    "@typescript-eslint/parser": "^5.3.1",
+    "add-asset-html-webpack-plugin": "^3.2.0",
+    "babel-loader": "^8.2.3",
+    "babel-plugin-styled-components": "^2.0.2",
+    "babel-plugin-styled-components-px2vw": "^1.6.0",
+    "css-loader": "^6.5.1",
+    "css-minimizer-webpack-plugin": "^3.1.2",
+    "electron": "^16.0.5",
+    "eslint": "^8.2.0",
+    "eslint-config-airbnb": "^19.0.0",
+    "eslint-config-airbnb-typescript": "^15.0.0",
+    "eslint-import-resolver-typescript": "^2.5.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.27.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "eslint-webpack-plugin": "^3.1.0",
+    "fork-ts-checker-webpack-plugin": "^6.4.0",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.4.5",
+    "postcss-loader": "^6.2.0",
+    "postcss-normalize": "^10.0.1",
+    "postcss-preset-env": "^6.7.0",
+    "postcss-px-to-viewport": "^1.1.1",
+    "progress-bar-webpack-plugin": "^2.1.0",
+    "react-refresh": "^0.11.0",
+    "sass": "^1.43.4",
+    "sass-loader": "^12.3.0",
+    "sass-resources-loader": "^2.2.4",
+    "speed-measure-webpack-plugin": "^1.5.0",
+    "style-loader": "^3.3.1",
+    "thread-loader": "^3.0.4",
+    "typescript": "^4.4.4",
+    "webpack": "^5.62.1",
+    "webpack-bundle-analyzer": "^4.5.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.4.0"
+  },
+  "browserslist": {
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ],
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ]
+  },
+  "resolutions": {
+    "styled-components": "^5"
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {
+        "asar": false,
+        "dir": "./dist",
+        "ignore": [
+          "src",
+          "webpack",
+          "node_modules",
+          ".idea",
+          ".git"
+        ]
+      },
+      "electronPackagerConfig": {
+        "asar": false,
+        "dir": "./dist",
+        "platform": [
+          "linux",
+          "win32"
+        ],
+        "arch": [
+          "ia32",
+          "x64"
+        ],
+        "ignore": [
+          ".idea"
+        ]
+      },
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "fight_read"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
+  }
+}
